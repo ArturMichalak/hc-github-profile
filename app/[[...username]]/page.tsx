@@ -24,6 +24,7 @@ export interface GithubRepository {
   forks_count: number;
   stargazers_count: number;
   updated_at: string; // ISO string
+  html_url: string;
 }
 
 export default async function Home({

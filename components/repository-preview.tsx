@@ -3,6 +3,7 @@ import licenseIcon from "@/public/chield-alt.svg";
 import branchIcon from "@/public/nesting.svg";
 import starIcon from "@/public/star.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeaderProps {
   repo: GithubRepository;
@@ -34,6 +35,7 @@ const getDate = (dateString: string) => {
 export function RepositoryPreview({ repo }: HeaderProps) {
   return (
     <li>
+      <Link href={repo.html_url}>
       <article className="py-6 px-5 rounded-xl bg-ebony bg-gradient-to-r from-ebony to-port-gore">
         <h2 className="mb-4">{repo.name}</h2>
         <p>{repo.description}</p>
@@ -56,7 +58,7 @@ export function RepositoryPreview({ repo }: HeaderProps) {
             <small>{getDate(repo.updated_at)}</small>
           </li>
         </ul>
-      </article>
+      </article></Link>
     </li>
   );
 }
