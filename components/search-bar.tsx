@@ -11,8 +11,10 @@ import { debounce } from '@/utils/debounce';
 import { request } from '@octokit/request';
 
 import { UserContext } from './sections/user';
+import { useRouter } from 'next/navigation';
 
 export default function SearchBar() {
+  const {push} = useRouter();
   const getGithubProfile = async (
     username: string,
     abortController?: AbortController
@@ -60,6 +62,7 @@ export default function SearchBar() {
   const updateUser = (profile: GithubProfile, repos: GithubRepository[]) => {
     setRepos(repos);
     setUser(profile);
+    push(`/${userName}`, {shallow: true});
     setUserName("");
     setProfile(undefined);
   };
