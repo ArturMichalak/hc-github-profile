@@ -5,6 +5,8 @@ Github profile finder. Application made in NextJS 14 to communicate with several
 - **DEMO URL** https://hc-github-profile.vercel.app/
 - **DEPLOYED ON** Vercel
 
+challenge link https://devchallenges.io/solution/3231
+
 ## DEV SERVER
 
 Check documentation
